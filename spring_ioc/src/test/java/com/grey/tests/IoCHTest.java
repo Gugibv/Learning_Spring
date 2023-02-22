@@ -13,16 +13,13 @@ public class IoCHTest {
     @Before
     public void before(){
         // 加载spring容器
-        //ApplicationContext spring的顶层核心接口
-        // ClassPathXmlApplicationContext 根据项目路径的xml配置来实例化spring容器
-        // FileSystemXmlApplicationContext 根据磁盘路径的xml配置来实例化spring容器
-        // AnnotationConfigApplicationContext 根据javaconfig 来配置实例化spring容器
-        // 在容器实例化的时候 就会加载所有的bean
+        // 在容器实例化的时候 就会加载所有的bean，同时调用bean的所有无参构造函数
         ioc=new ClassPathXmlApplicationContext("spring-ioc-high.xml");
     }
 
     @Test
     public  void test01() {
+        // 这个案例中，bean都是在这句话输出之前加载
         System.out.println("Spring已加载");
     }
 
@@ -31,8 +28,9 @@ public class IoCHTest {
      */
     @Test
     public  void test02() {
+        // id = "test02" , 因为配置了 lazy-init="true" 懒加载，所以在调用的时候才加载 ，不使用则永远都不会加载
         System.out.println("Spring已加载");
-        Wife wife = ioc.getBean("wife", Wife.class);
+        Wife wife = ioc.getBean("test02", Wife.class);
         System.out.println(wife);
 
     }
@@ -41,10 +39,14 @@ public class IoCHTest {
      */
     @Test
     public  void test03() {
-        Person person1 = ioc.getBean("person", Person.class); //new Person()
-        Person person2 = ioc.getBean("person", Person.class); //new Person()
+        Person person1 = ioc.getBean("test03", Person.class); //new Person()
+        Person person2 = ioc.getBean("test03", Person.class); //new Person()
+        Person person3 = ioc.getBean("test03", Person.class); //new Person()
+        Person person4 = ioc.getBean("test03", Person.class); //new Person()
+        Person person5 = ioc.getBean("test03", Person.class); //new Person()
+        Person person6 = ioc.getBean("test03", Person.class); //new Person()
+        // 不管使用多少次，就只会加载一次person
         System.out.println(person1);
-
     }
 
     /**
@@ -52,7 +54,7 @@ public class IoCHTest {
      */
     @Test
     public  void test04() {
-        Person person = ioc.getBean("person", Person.class);
+        Person person = ioc.getBean("test04", Person.class);
         System.out.println(person);
 
     }
@@ -62,7 +64,7 @@ public class IoCHTest {
      */
     @Test
     public  void test05() {
-        Person person = ioc.getBean("person", Person.class);
+        Person person = ioc.getBean("test05", Person.class);
         System.out.println(person);
 
     }
