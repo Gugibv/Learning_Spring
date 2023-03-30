@@ -1,6 +1,6 @@
-package cn.tulingxueyuan;
+package cn.grey;
 
-import cn.tulingxueyuan.beans.User;
+import cn.grey.beans.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 

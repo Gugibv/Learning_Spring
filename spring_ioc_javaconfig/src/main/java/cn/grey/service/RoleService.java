@@ -1,7 +1,5 @@
-package cn.tulingxueyuan.service;
+package cn.grey.service;
 
-
-import org.springframework.stereotype.Component;
 
 public interface RoleService {
 

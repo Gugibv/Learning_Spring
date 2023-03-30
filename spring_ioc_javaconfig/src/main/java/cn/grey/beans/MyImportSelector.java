@@ -1,4 +1,4 @@
-package cn.tulingxueyuan.beans;
+package cn.grey.beans;
 
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.type.AnnotationMetadata;

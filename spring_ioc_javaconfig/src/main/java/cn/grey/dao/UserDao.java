@@ -1,4 +1,4 @@
-package cn.tulingxueyuan.dao;
+package cn.grey.dao;
 
 public interface UserDao {
 

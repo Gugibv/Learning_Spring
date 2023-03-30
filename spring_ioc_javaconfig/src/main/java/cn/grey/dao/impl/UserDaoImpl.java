@@ -1,6 +1,6 @@
-package cn.tulingxueyuan.dao.impl;
+package cn.grey.dao.impl;
 
-import cn.tulingxueyuan.dao.UserDao;
+import cn.grey.dao.UserDao;
 import org.springframework.stereotype.Repository;
 
 @Repository

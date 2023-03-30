@@ -1,4 +1,4 @@
-package cn.tulingxueyuan.service;
+package cn.grey.service;
 
 
 public interface UserService{

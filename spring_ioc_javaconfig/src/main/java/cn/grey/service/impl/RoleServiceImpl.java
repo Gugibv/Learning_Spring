@@ -1,10 +1,7 @@
-package cn.tulingxueyuan.service.impl;
+package cn.grey.service.impl;
 
-import cn.tulingxueyuan.beans.Role;
-import cn.tulingxueyuan.dao.UserDao;
-import cn.tulingxueyuan.service.BaseService;
-import cn.tulingxueyuan.service.RoleService;
-import cn.tulingxueyuan.service.UserService;
+import cn.grey.dao.UserDao;
+import cn.grey.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

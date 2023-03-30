@@ -1,9 +1,8 @@
-package cn.tulingxueyuan;
+package cn.grey;
 
-import cn.tulingxueyuan.beans.MyImportBeanDefinitionRegistrar;
-import cn.tulingxueyuan.beans.MyImportSelector;
-import cn.tulingxueyuan.beans.Role;
-import cn.tulingxueyuan.beans.User;
+import cn.grey.beans.MyImportBeanDefinitionRegistrar;
+import cn.grey.beans.Role;
+import cn.grey.beans.User;
 import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
@@ -11,7 +10,7 @@ import org.springframework.context.annotation.*;
 // 用户标记一个spring配置类,之前是根据xml启动spring上下文
 // 相当于 xml文件  <beans></beans>
 @Configuration
-@ComponentScan(basePackages = "cn.tulingxueyuan")   //== <context:component-scan base-package="cn.tulingxueyuan" >
+@ComponentScan(basePackages = "cn.grey")   //== <context:component-scan base-package="cn.tulingxueyuan" >
 // 使用@PropertySource 引入外部属性资源文件
 @PropertySource("classpath:db.properties")
 /* @Import

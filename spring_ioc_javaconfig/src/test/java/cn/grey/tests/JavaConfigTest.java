@@ -1,10 +1,10 @@
-package cn.tulingxueyuan.tests;
+package cn.grey.tests;
 
-import cn.tulingxueyuan.IoCJavaConfig;
-import cn.tulingxueyuan.beans.Person;
-import cn.tulingxueyuan.beans.Role;
-import cn.tulingxueyuan.beans.User;
-import cn.tulingxueyuan.controller.UserController;
+import cn.grey.IoCJavaConfig;
+import cn.grey.beans.Person;
+import cn.grey.beans.Role;
+import cn.grey.beans.User;
+import cn.grey.controller.UserController;
 import com.alibaba.druid.pool.DruidDataSource;
 import org.junit.Before;
 import org.junit.Test;

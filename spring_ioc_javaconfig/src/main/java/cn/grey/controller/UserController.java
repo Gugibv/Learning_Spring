@@ -1,15 +1,9 @@
-package cn.tulingxueyuan.controller;
+package cn.grey.controller;
 
 
-import cn.tulingxueyuan.beans.User;
-import cn.tulingxueyuan.service.BaseService;
-import cn.tulingxueyuan.service.UserService;
+import cn.grey.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-
-import javax.annotation.Resource;
 
 @Controller
 public class UserController {

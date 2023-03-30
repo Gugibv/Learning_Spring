@@ -1,6 +1,5 @@
-package cn.tulingxueyuan.beans;
+package cn.grey.beans;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
