@@ -1,5 +1,6 @@
 package cn.grey.beans;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -10,7 +11,7 @@ public class User {
     1.除了可以写硬编码值
     2.还可以写${}  、#{}
     * */
-    //@Value("#{role.name}")
+    @Value("#{role.name}")
     private String name;
 
     public String getName() {

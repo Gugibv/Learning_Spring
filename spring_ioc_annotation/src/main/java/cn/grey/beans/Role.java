@@ -11,7 +11,7 @@ import javax.annotation.PreDestroy;
 //@Lazy  ==lazy-init
 //@Scope("prototype")
 public class Role {
-    @Value("管理员")
+    @Value("金克丝")
     private String name;
 
     public String getName() {
