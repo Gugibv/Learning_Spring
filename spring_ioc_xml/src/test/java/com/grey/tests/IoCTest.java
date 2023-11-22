@@ -1,5 +1,6 @@
 package com.grey.tests;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import com.grey.bean.Person;
 import com.grey.bean.User;
 import com.grey.bean.Wife;
@@ -7,6 +8,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.sql.Connection;
+import java.sql.SQLException;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -151,6 +155,22 @@ public class IoCTest {
         assertNotNull(person1);
         assertNotNull(person2);
         assertNotNull(person3);
+    }
+
+    /**
+     * 引用第三方bean  和 引用外部属性资源文件
+     */
+    @Test
+    public  void getDataSource() {
+        DruidDataSource datasource = ioc.getBean("dataSource", DruidDataSource.class);
+        assertNotNull(datasource);
+        System.out.println(datasource);
+
+        try (datasource; Connection connection = datasource.getConnection()) {
+            System.out.println("数据库连接成功");
+        } catch (SQLException e) {
+            System.err.println("数据库连接失败：" + e.getMessage());
+        }
     }
 
 }
