@@ -11,7 +11,6 @@
 
     <alias name="user01" alias="user05"/>
 
-
     <bean class="com.grey.bean.User" id="user06">
         <property name="idxx" value="1"/>
         <property name="username" value="zhangsan"/>
@@ -25,8 +24,56 @@
     </bean>
 
 
+    <bean id="user08" class="com.grey.bean.instantiate.UserFactory" factory-method="getUserBean"/>
+
+
+    <bean id="userBeanFactory" class="com.grey.bean.instantiate.UserFactory"/>
+    <bean id="user09" factory-bean="userBeanFactory"  factory-method="getUserBean">
+           <constructor-arg name="id" value="1"/>
+           <constructor-arg name="username" value="lisi"/>
+           <constructor-arg name="realname" value="李四"/>
+    </bean>
+
+
+    <bean id="user10" class="com.grey.bean.instantiate.UserBeanFactoryImpl"/>
 
 
 
+    <bean id="person01" class="com.grey.bean.Person">
+        <property name="id" value="1"/>
+        <property name="name"><null/></property>
+        <property name="birthday" value="2020/05/20"/>
 
+        <property name="wife">
+            <bean class="com.grey.bean.Wife" >
+                <property name="age" value="18"/>
+                <property name="name" value="迪丽热巴"/>
+            </bean>
+        </property>
+
+        <property name="hobbies">
+            <list>
+                <value>唱歌</value>
+                <value>跳舞</value>
+            </list>
+        </property>
+
+        <property name="course" >
+            <map>
+                <entry key="1" value="语文"> </entry>
+                <entry key="2" value="数学"> </entry>
+            </map>
+        </property>
+
+    </bean>
+
+
+
+    <bean id="wife01" class="com.grey.bean.Wife"   p:age="18" p:name="迪丽热巴" />
+   <!-- <bean id="wife02" class="com.grey.bean.Wife"   c:age="20" c:name="xxx"/>-->
+
+
+    <bean id="person02" class="com.grey.bean.Person"  autowire="byName"/>
+    <bean id="person03" class="com.grey.bean.Person"  autowire="byType"/>
+    <bean id="person04" class="com.grey.bean.Person"  autowire="constructor"/>
 </beans>

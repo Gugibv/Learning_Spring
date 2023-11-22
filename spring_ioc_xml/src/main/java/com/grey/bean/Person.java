@@ -101,21 +101,21 @@ public class Person implements  InitializingBean,DisposableBean {
     }
 
     // 实例化
-    public void afterPropertiesSet() throws Exception {
+    public void afterPropertiesSet() {
         System.out.println("实例化Person1");
     }
 
     // 销毁
-    public void destroy() throws Exception {
+    public void destroy() {
         System.out.println("销毁Person1");
     }
     // 实例化
-    public void initByConfig() throws Exception {
+    public void initByConfig() {
         System.out.println("实例化Person2");
     }
 
     // 销毁
-    public void destroyByConfig() throws Exception {
+    public void destroyByConfig() {
         System.out.println("销毁Person2");
     }
 }
