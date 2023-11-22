@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean class="com.grey.bean.User" id="user" name="user01 user02,user03;user04">
+        <description>用来描述一个Bean是干嘛的</description>
+    </bean>
+
+    <alias name="user01" alias="user05"/>
+
+
+    <bean class="com.grey.bean.User" id="user06">
+        <property name="idxx" value="1"/>
+        <property name="username" value="zhangsan"/>
+        <property name="realname" value="张三"/>
+    </bean>
+
+    <bean class="com.grey.bean.User" id="user07">
+        <constructor-arg name="id" value="1"/>
+        <constructor-arg name="username"  value="zhangsan"/>
+        <constructor-arg name="realname"  value="张三"/>
+    </bean>
+
+
+
+
+
+
+</beans>
