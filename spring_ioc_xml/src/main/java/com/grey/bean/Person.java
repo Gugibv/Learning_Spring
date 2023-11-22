@@ -88,7 +88,7 @@ public class Person implements InitializingBean,DisposableBean {
 
     public Person() {
 
-        System.out.println("我是persons 的无参构造方法，我被spring加载了");
+        System.out.println("我是persons bean 的无参构造方法，我被spring加载了");
 
     }
 
@@ -103,6 +103,5 @@ public class Person implements InitializingBean,DisposableBean {
     public void destroy() {
         System.out.println("我是Person Bean，实现了 DisposableBean 接口，正在调用 destroy() 销毁方法");
     }
-
 
 }

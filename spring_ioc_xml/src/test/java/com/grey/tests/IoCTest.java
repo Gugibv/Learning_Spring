@@ -135,4 +135,22 @@ public class IoCTest {
         assertNotNull(bean);
         System.out.println(bean);
     }
+
+
+    /**
+     *  作用域
+     */
+    @Test
+    public void scopeTest() {
+        Person person1 = ioc.getBean("person05", Person.class); //new Person()
+        Person person2 = ioc.getBean("person05", Person.class); //new Person()
+        Person person3 = ioc.getBean("person05", Person.class); //new Person()
+
+        // scope="singleton" 不管使用多少次，就只会加载一次 person , 此为默认
+        // scope="prototype" 则会多长创建加载bean
+        assertNotNull(person1);
+        assertNotNull(person2);
+        assertNotNull(person3);
+    }
+
 }

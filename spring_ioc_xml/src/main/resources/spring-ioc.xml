@@ -5,29 +5,29 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean class="com.grey.bean.User" id="user" name="user01 user02,user03;user04">
+    <bean class="com.grey.bean.User" id="user" name="user01 user02,user03;user04" lazy-init="true">
         <description>用来描述一个Bean是干嘛的</description>
     </bean>
 
-    <alias name="user01" alias="user05"/>
+    <alias name="user01" alias="user05" />
 
-    <bean class="com.grey.bean.User" id="user06">
+    <bean class="com.grey.bean.User" id="user06"  lazy-init="true">
         <property name="id" value="1"/>
         <property name="username" value="zhangsan"/>
         <property name="realname" value="张三"/>
     </bean>
 
-    <bean class="com.grey.bean.User" id="user07">
+    <bean class="com.grey.bean.User" id="user07"  lazy-init="true">
         <constructor-arg name="id" value="1"/>
         <constructor-arg name="username"  value="zhangsan"/>
         <constructor-arg name="realname"  value="张三"/>
     </bean>
 
 
-    <bean id="user08" class="com.grey.bean.instantiate.UserFactory" factory-method="getUserBean"/>
+    <bean id="user08" class="com.grey.bean.instantiate.UserFactory" factory-method="getUserBean" lazy-init="true"/>
 
 
-    <bean id="userBeanFactory" class="com.grey.bean.instantiate.UserFactory"/>
+    <bean id="userBeanFactory" class="com.grey.bean.instantiate.UserFactory" lazy-init="true"/>
     <bean id="user09" factory-bean="userBeanFactory"  factory-method="getUserBean">
            <constructor-arg name="id" value="1"/>
            <constructor-arg name="username" value="lisi"/>
@@ -35,11 +35,11 @@
     </bean>
 
 
-    <bean id="user10" class="com.grey.bean.instantiate.UserBeanFactoryImpl"/>
+    <bean id="user10" class="com.grey.bean.instantiate.UserBeanFactoryImpl" lazy-init="true"/>
 
 
 
-    <bean id="person01" class="com.grey.bean.Person">
+    <bean id="person01" class="com.grey.bean.Person" lazy-init="true">
         <property name="id" value="1"/>
         <property name="name"><null/></property>
         <property name="birthday" value="2020/05/20"/>
@@ -69,11 +69,14 @@
 
 
 
-        <bean id="wife01" class="com.grey.bean.Wife"   p:age="18" p:name="迪丽热巴" />
+        <bean id="wife01" class="com.grey.bean.Wife"   p:age="21" p:name="迪丽热巴" lazy-init="true"/>
    <!-- <bean id="wife02" class="com.grey.bean.Wife"   c:age="20" c:name="xxx"/>-->
 
 
-    <bean id="person02" class="com.grey.bean.Person"  autowire="byName"/>
-    <bean id="person03" class="com.grey.bean.Person"  autowire="byType"/>
-    <bean id="person04" class="com.grey.bean.Person"  autowire="constructor"/>
+    <bean id="person02" class="com.grey.bean.Person"  autowire="byName" lazy-init="true"/>
+    <bean id="person03" class="com.grey.bean.Person"  autowire="byType" lazy-init="true"/>
+    <bean id="person04" class="com.grey.bean.Person"  autowire="constructor" lazy-init="true"/>
+
+
+    <bean id="person05" class="com.grey.bean.Person"  lazy-init="true"  scope="prototype"/>
 </beans>
