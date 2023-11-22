@@ -10,9 +10,9 @@ public class User {
         return id;
     }
 
-    // 基于setter方法的依赖注入   对应的set方法的名字
-    // 比如 setId    ->  name="id"    setXxx   -> name="xxx"
-    public void setIdxx(Integer id) {
+    // 基于setter方法的依赖注入，在xml 文件中配置的 property 属性匹配的是对应的set方法的名字
+    // 比如 setId，那么匹配的是 name="id"，又比如 setXxx 那么匹配的是 name="xxx"
+    public void setId(Integer id) {
         this.id = id;
     }
 

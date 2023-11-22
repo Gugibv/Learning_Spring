@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class Person implements  InitializingBean,DisposableBean {
+public class Person implements InitializingBean,DisposableBean {
     private Integer id;
     private String name;
     private String gender;
@@ -87,35 +87,22 @@ public class Person implements  InitializingBean,DisposableBean {
     }
 
     public Person() {
-        System.out.println("Person加载");
+
+        System.out.println("我是persons 的无参构造方法，我被spring加载了");
+
     }
 
-    public static  Person createPersonFactory(){
-        Child child = new Child();
-        child.setName("儿子");
-        return child;
-    }
-
-    public Person(Wife wife3) {
-        this.wife = wife3;
-    }
 
     // 实例化
     public void afterPropertiesSet() {
-        System.out.println("实例化Person1");
+        System.out.println("我是Person Bean，实现了 InitializingBean 接口，正在调用 afterPropertiesSet() 初始化方法");
     }
+
 
     // 销毁
     public void destroy() {
-        System.out.println("销毁Person1");
-    }
-    // 实例化
-    public void initByConfig() {
-        System.out.println("实例化Person2");
+        System.out.println("我是Person Bean，实现了 DisposableBean 接口，正在调用 destroy() 销毁方法");
     }
 
-    // 销毁
-    public void destroyByConfig() {
-        System.out.println("销毁Person2");
-    }
+
 }

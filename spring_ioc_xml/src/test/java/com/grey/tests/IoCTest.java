@@ -125,6 +125,7 @@ public class IoCTest {
         System.out.println(bean);
     }
 
+
     /**
      * bean 自动注入方式之三：constructor
      */
