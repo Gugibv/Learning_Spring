@@ -2,7 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
 
     <bean class="com.grey.bean.User" id="user" name="user01 user02,user03;user04" lazy-init="true">
@@ -77,18 +79,9 @@
     <bean id="person03" class="com.grey.bean.Person"  autowire="byType" lazy-init="true"/>
     <bean id="person04" class="com.grey.bean.Person"  autowire="constructor" lazy-init="true"/>
 
-
     <bean id="person05" class="com.grey.bean.Person"  lazy-init="true"  scope="prototype"/>
 
-
-    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations">
-            <array>
-                <value>classpath:db.properties</value>
-            </array>
-        </property>
-    </bean>
-
+    <context:property-placeholder location="db.properties"/>
     <!--配置第三方bean-->
     <bean class="com.alibaba.druid.pool.DruidDataSource" id="dataSource">
         <property name="username" value="${mysql.username}"/>
