@@ -11,73 +11,69 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import static org.junit.Assert.assertNotNull;
 
 public class IocTest {
     ClassPathXmlApplicationContext ioc;
 
-
-    /**
-     * 问题： IDEA中Spring配置错误：class path resource [.xml] cannot be opened because it does not exist
-     * 原因： ClassPathXmlApplicationContext()方法是在其所在的目录中寻找 .xml 配置文件。
-     * 注意： 这里指的是编译后的 .class 文件所在的目录，不是 .java 文件
-     * 解决： 点击 File -> Project Structure，选择Modules -> Paths -> Output Paths
-     *       修改为 spring_ioc.xml 文件所在目录。
-     */
     @Before
     public void before() {
 
         ioc = new ClassPathXmlApplicationContext("spring_ioc.xml");
+
     }
 
     @Test
-    public void test01() {
+    public void getController() {
         UserController userController = (UserController) ioc.getBean("userController");
+        assertNotNull(userController);
         System.out.println(userController);
     }
 
     @Test
-    public void test02() {
-        User bean = ioc.getBean(User.class);
-        System.out.println(bean.getName());
+    public void getUserBean() {
+        User user = ioc.getBean(User.class);
+        assertNotNull(user);
+        System.out.println(user.getName());
     }
 
     @Test
-    public void test03() {
-        UserController bean = ioc.getBean(UserController.class);
-        bean.getUser();
+    public void getUserFromDatabase() {
+        UserController userController = ioc.getBean(UserController.class);
+        assertNotNull(userController);
+        userController.getUser();
+
     }
 
     @Test
-    public void test04() {
+    public void getRoleBeanPrototype() {
 
         Role bean = ioc.getBean(Role.class);
         Role bean2 = ioc.getBean(Role.class);
         Role bean3 = ioc.getBean(Role.class);
+
+        assertNotNull(bean);
+        assertNotNull(bean2);
+        assertNotNull(bean3);
     }
 
     @Test
-    public void test05() {
-
+    public void postConstructExample() {
         Role bean = ioc.getBean(Role.class);
+        assertNotNull(bean);
         ioc.close();
     }
 
 
     @Test
-    public void test06() {
+    public void instanceofExample() {
 
-        UserService bean = ioc.getBean(UserService.class);
-        System.out.println(bean.getClass());
-
-
+        UserService userService = ioc.getBean(UserService.class);
         RoleServiceImpl roleService=new RoleServiceImpl();
-        // instanceof  用户判断前面的对象是否是否吗的类，或者子类，或者接口
-        if(roleService instanceof RoleService)
-        {
-            System.out.println("OK");
-            //RETURN
-        }
 
+        System.out.println((roleService instanceof RoleService));
+        // instanceof  用于判断前面的对象是否是否吗的类，或者子类，或者接口
 
+        assertNotNull(userService);
     }
 }
