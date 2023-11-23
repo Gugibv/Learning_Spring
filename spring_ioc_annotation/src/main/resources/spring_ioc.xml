@@ -22,10 +22,8 @@
  -->
 
     <context:component-scan base-package="com.grey" >
-       <!-- <context:include-filter type="assignable" expression="cn.grey.controller.UserController"/>-->
+       <!-- <context:include-filter type="assignable" expression="controller.com.grey.UserController"/>-->
         <!--<context:exclude-filter type="assignable" expression=""/>-->
     </context:component-scan>
 
-
-    <context:property-placeholder location="db.properties"/>
 </beans>

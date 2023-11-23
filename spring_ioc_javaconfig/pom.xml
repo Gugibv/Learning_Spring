@@ -9,4 +9,12 @@
     <artifactId>spring_ioc_javaconfig</artifactId>
     <name>Archetype - spring_ioc_javaconfig</name>
     <url>http://maven.apache.org</url>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+            <version>2.1.7.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
