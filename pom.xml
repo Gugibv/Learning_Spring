@@ -13,6 +13,7 @@
     <module>spring_ioc_annotation</module>
       <module>spring_aop</module>
       <module>spring_transaction</module>
+      <module>spring_data_jpa</module>
   </modules>
 
 
