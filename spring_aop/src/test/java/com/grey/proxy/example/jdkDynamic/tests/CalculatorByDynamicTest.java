@@ -1,9 +1,9 @@
-package com.grey.proxy.dynamic.tests;
+package com.grey.proxy.example.jdkDynamic.tests;
 
 
-import com.grey.proxy.dynamic.Calculator;
-import com.grey.proxy.dynamic.ICalculator;
-import com.grey.proxy.dynamic.MyProxyObjectCreate;
+import com.grey.proxy.example.dynamic.Calculator;
+import com.grey.proxy.example.dynamic.ICalculator;
+import com.grey.proxy.example.dynamic.MyProxyObjectCreate;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;

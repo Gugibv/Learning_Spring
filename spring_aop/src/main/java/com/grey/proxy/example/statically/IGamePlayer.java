@@ -1,4 +1,4 @@
-package com.grey.proxy.statically;
+package com.grey.proxy.example.statically;
 
 
 public interface IGamePlayer {

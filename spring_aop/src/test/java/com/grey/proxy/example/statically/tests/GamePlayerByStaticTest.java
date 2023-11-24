@@ -1,7 +1,7 @@
-package com.grey.proxy.statically.tests;
+package com.grey.proxy.example.statically.tests;
 
-import com.grey.proxy.statically.GameProxyPlayer;
-import com.grey.proxy.statically.IGamePlayer;
+import com.grey.proxy.example.statically.GameProxyPlayer;
+import com.grey.proxy.example.statically.IGamePlayer;
 import org.junit.Test;
 
 

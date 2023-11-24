@@ -1,4 +1,6 @@
-package com.grey.proxy.dynamic;
+package com.grey.proxy.example.dynamic;
+
+import com.grey.proxy.example.dynamic.util.CalculatorLogUtil;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -30,9 +32,12 @@ public class MyInvocationHandler implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
         Object result=null;
+
         try {
             CalculatorLogUtil.before(method,args);
+
             result = method.invoke(target, args);
+
             CalculatorLogUtil.after(method,args);
         }
         catch (Exception ex){

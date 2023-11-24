@@ -1,4 +1,4 @@
-package com.grey.proxy.dynamic;
+package com.grey.proxy.example.dynamic.util;
 
 
 import java.lang.reflect.Method;
