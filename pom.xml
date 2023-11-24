@@ -12,6 +12,7 @@
     <module>spring_ioc_javaconfig</module>
     <module>spring_ioc_annotation</module>
       <module>spring_aop</module>
+      <module>spring_transaction</module>
   </modules>
 
 
