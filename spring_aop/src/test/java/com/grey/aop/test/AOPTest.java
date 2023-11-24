@@ -21,7 +21,7 @@ public class AOPTest {
     }
 
     @Test
-    public void test01() {
+    public void callUserController() {
         UserController userController = ioc.getBean(UserController.class);
         assertNotNull(userController);
         userController.get(1);

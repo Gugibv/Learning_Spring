@@ -13,6 +13,6 @@ public class UserController {
 
 
     public void get(Integer ID){
-        System.out.println(userService.getName(ID));
+        System.out.println("业务请求获得响应结果："+userService.getName(ID));
     }
 }
