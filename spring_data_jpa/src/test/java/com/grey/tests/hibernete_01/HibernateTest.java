@@ -1,4 +1,4 @@
-package com.grey.jpa_01_hibernate.test;
+package com.grey.tests.hibernete_01;
 
 
 import com.grey.beans.Customer;
@@ -15,7 +15,6 @@ import org.junit.Test;
 import java.util.List;
 
 public class HibernateTest {
-
     // Session工厂  Session:数据库会话  代码和数据库的一个桥梁
     private SessionFactory sessionFactory;
 

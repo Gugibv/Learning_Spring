@@ -8,9 +8,9 @@
   <name>Archetype - Learning_Spring</name>
   <url>http://maven.apache.org</url>
   <modules>
-    <module>spring_ioc_xml</module>
-    <module>spring_ioc_javaconfig</module>
-    <module>spring_ioc_annotation</module>
+      <module>spring_ioc_xml</module>
+      <module>spring_ioc_javaconfig</module>
+      <module>spring_ioc_annotation</module>
       <module>spring_aop</module>
       <module>spring_transaction</module>
       <module>spring_data_jpa</module>

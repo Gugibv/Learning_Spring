@@ -1,4 +1,4 @@
-package com.grey.jpa_01_hibernate.test;
+package com.grey.tests.hibernete_01;
 
 import com.grey.beans.Customer;
 import org.junit.Assert;
