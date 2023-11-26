@@ -20,7 +20,7 @@ public class HibernateTest {
 
     @Before
     public void init() {
-        StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure("/jpa_01_hibernate/hibernate.cfg.xml").build();
+        StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure("/hibernate.cfg.xml").build();
 
         //2. 根据服务注册类创建一个元数据资源集，同时构建元数据并生成应用一般唯一的的session工厂
         sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
